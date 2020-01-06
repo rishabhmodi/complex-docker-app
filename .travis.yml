@@ -9,14 +9,14 @@ script:
   - docker run rishabhmodi/complex-docker-app npm test -- --coverage
 
 after_success:
-  - docker build -t rishabhmodi/multi-client ./client
-  - docker build -t rishabhmodi/multi-nginx ./nginx
-  - docker build -t rishabhmodi/multi-server ./server
-  - docker build -t rishabhmodi/multi-worker ./worker
+  - docker build -t rishu74177/multi-client ./client
+  - docker build -t rishu74177/multi-nginx ./nginx
+  - docker build -t rishu74177/multi-server ./server
+  - docker build -t rishu74177/multi-worker ./worker
   # Login to docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # take these images and push to docker hub
-  - docker push rishabhmodi/multi-client
-  - docker push rishabhmodi/multi-nginx
-  - docker push rishabhmodi/multi-server
-  - docker push rishabhmodi/multi-worker
+  - docker push rishu74177/multi-client
+  - docker push rishu74177/multi-nginx
+  - docker push rishu74177/multi-server
+  - docker push rishu74177/multi-worker
